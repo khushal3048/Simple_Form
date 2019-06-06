@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.support.design.widget.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,6 +35,17 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(tag,txtPassword.getText().toString());
 
                 final Toast toast = Toast.makeText(getApplicationContext(),"Khushal Kakadiya Thank You!!",Toast.LENGTH_SHORT);
+                toast.show();
+
+                Snackbar snb = Snackbar.make(findViewById(R.id.myview),"Action Snackbar!",Snackbar.LENGTH_INDEFINITE).setAction("Clear", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        txtName.setText("");
+                        txtEmail.setText("");
+                        txtPassword.setText("");
+                    }
+                });
+                snb.show();
 
             }
         });
