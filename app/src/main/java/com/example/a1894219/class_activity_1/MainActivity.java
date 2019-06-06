@@ -34,15 +34,17 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(tag,txtEmail.getText().toString());
                 Log.d(tag,txtPassword.getText().toString());
 
-                final Toast toast = Toast.makeText(getApplicationContext(),"Khushal Kakadiya Thank You!!",Toast.LENGTH_SHORT);
-                toast.show();
+                final Toast toast = Toast.makeText(getApplicationContext(),"Thank You!! Khushal Kakadiya",Toast.LENGTH_SHORT);
 
-                Snackbar snb = Snackbar.make(findViewById(R.id.myview),"Action Snackbar!",Snackbar.LENGTH_INDEFINITE).setAction("Clear", new View.OnClickListener() {
+
+                Snackbar snb = Snackbar.make(findViewById(R.id.myview),"Clear all the data",Snackbar.LENGTH_INDEFINITE).setAction("Clear", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         txtName.setText("");
                         txtEmail.setText("");
                         txtPassword.setText("");
+
+                        toast.show();
                     }
                 });
                 snb.show();
